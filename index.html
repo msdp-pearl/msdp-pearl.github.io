@@ -14,12 +14,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-    <!--    Browser tab icon-->
-    <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png">
-    <link rel="manifest" href="static/icons/site.webmanifest">
-    <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon" />
+    <!-- Browser tab favicon -->
+    <link rel="icon" href="static/icons/favicon.ico" type="image/x-icon"> <!-- main -->
+    <link rel="alternate icon" href="static/icons/favicon.svg" type="image/svg+xml"> <!-- modern browsers -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/icons/favicon-32x32.png"> <!-- fallback -->
+    <link rel="icon" type="image/png" sizes="16x16" href="static/icons/favicon-16x16.png"> <!-- fallback -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/icons/apple-touch-icon.png"> <!-- iOS -->
+    <link rel="manifest" href="static/icons/site.webmanifest"> <!-- PWA optional -->
 
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -31,18 +32,43 @@
             background: #fff;
             color: #222;
         }
+
         /*padding around sections       */
-        .section {
-              padding-top: 2.0rem;
-              padding-bottom: 1.5rem;
-            }
+        /*.section {*/
+        /*      padding-top: 2.0rem;*/
+        /*      padding-bottom: 1.5rem;*/
+        /*    }*/
+
+        .section .title {
+            color: rgb(117, 84, 175);
+        }
 
         .publication-title {
             font-family: 'Castoro', serif;
         }
 
+        /*<!-- Or a reusable class in your CSS -->*/
+        .purple {
+            color: rgb(117, 84, 175);
+        }
+
         .hero .title {
             color: #222;
+            /*color: rgb(117, 84, 175);*/
+        }
+
+
+        /* Links match the same color */
+        a {
+            color: rgb(117, 84, 175);
+        }
+
+        a:hover {
+            color: rgb(97, 64, 155); /* slightly darker on hover */
+        }
+
+        a:visited {
+            color: rgb(117, 84, 175);
         }
 
         .navbar {
@@ -254,7 +280,7 @@
             display: none;
             align-items: center;
             justify-content: center;
-            pointer-events: none;  /* GIF error */
+            pointer-events: none; /* GIF error */
             background: rgba(0, 0, 0, .20); /* bem mais leve */
             z-index: 9999;
             transition: opacity .12s ease;
@@ -264,7 +290,7 @@
         #img-zoom-overlay.active {
             display: flex;
             opacity: 1;
-            pointer-events: all;  /* gif error */
+            pointer-events: all; /* gif error */
         }
 
         /* “janela” que contém a imagem */
@@ -310,6 +336,7 @@
 </head>
 <body>
 
+<!--<br>-->
 <!-- Hero -->
 <section class="hero" style="padding-botton: 0.0rem;">
     <div class="hero-body">
@@ -317,15 +344,16 @@
             <div class="columns is-centered">
                 <div class="column has-text-centered">
                     <h1 class="title is-1 publication-title">
-                        Self-Supervised Multisensory Pretraining for Contact-Rich Robot Reinforcement Learning
+                        <span class="purple">MSDP</span>: Self-Supervised Multisensory Pretraining for Contact-Rich
+                        Robot <br> Reinforcement Learning
                     </h1>
 
                     <!-- Authors -->
                     <div class="is-size-5 publication-authors">
                         <span class="author-block"><a
-                                href="https://pearl-lab.com/people/rickmer-krohn/">Rickmer Krohn</a><sup>1,3</sup>,</span>
+                                href="https://pearl-lab.com/people/rickmer-krohn/">Rickmer Krohn</a><sup>1,2,3</sup>,</span>
                         <span class="author-block"><a
-                                href="https://pearl-lab.com/people/vignesh-prasad/">Vignesh Prasad</a><sup>1</sup>,</span>
+                                href="https://pearl-lab.com/people/vignesh-prasad/">Vignesh Prasad</a><sup>1,2,3</sup>,</span>
                         <span class="author-block"><a href="https://gabrieletiboni.com/">Gabriele Tiboni</a><sup>1</sup>,</span>
                         <span class="author-block"><a href="https://pearl-lab.com/people/georgia-chalvatzaki/">Georgia Chalvatzaki</a><sup>1,2,3</sup></span>
                     </div>
@@ -340,19 +368,20 @@
                     <!-- Publication links -->
                     <div class="column has-text-centered">
                         <div class="publication-links">
-                            <!-- PDF -->
-                          <span class="link-block">
-                              <a href="./static/files/MSDP_final_placeholder.pdf"
-                                 target="_blank"
-                                 class="external-link button is-normal is-rounded is-dark">
-                                <span class="icon"><i class="fas fa-book"></i></span>
-                                <span>Manuscript</span>
-                              </a>
-                            </span>
+                            <!-- TODO: add PDF -->
+                            <!--                            <span class="link-block">-->
+                            <!--                              <a href="./static/files/MSDP_final_placeholder.pdf"-->
+                            <!--                                 target="_blank"-->
+                            <!--                                 class="external-link button is-normal is-rounded is-dark">-->
+                            <!--                                <span class="icon"><i class="fas fa-book"></i></span>-->
+                            <!--                                <span>Manuscript</span>-->
+                            <!--                              </a>-->
+                            <!--                            </span>-->
 
                             <!-- Arxiv -->
                             <span class="link-block">
-                            <a href="https://arxiv.org/abs/2511.14427" class="external-link button is-normal is-rounded is-dark">
+                            <a href="https://arxiv.org/abs/2511.14427"
+                               class="external-link button is-normal is-rounded is-dark">
                               <span class="icon"><i class="ai ai-arxiv"></i></span>
                               <span>arXiv</span>
                             </a>
@@ -390,37 +419,88 @@
     </div>
 </section>
 
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
 
-<!-- Abstract -->
-<section class="section" id="abstract"  style="padding-top: 0.0rem;">
+
+<!-- TL;DR -->
+<section class="section">
     <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-            <div class="column is-four-fifths">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                    <p>
-                        Effective contact-rich manipulation requires robots to synergistically leverage vision, force,
-                        and proprioception. However, Reinforcement Learning agents struggle to learn in such
-                        multisensory settings, especially amidst sensory noise and dynamic changes.
-                        We propose MultiSensory Dynamic Pretraining (MSDP), a novel framework for learning expressive
-                        multisensory representations tailored for task-oriented policy learning. MSDP is based on masked
-                        autoencoding and trains a transformer-based encoder by reconstructing multisensory observations
-                        from only a subset of sensor embeddings, leading to cross-modal prediction and sensor fusion.
-                        For downstream policy learning, we introduce a novel asymmetric architecture, where a
-                        cross-attention mechanism allows the critic to extract dynamic, task-specific features from the
-                        frozen embeddings, while the actor receives a stable pooled representation to guide its actions.
-                        Our method demonstrates accelerated learning and robust performance under diverse perturbations,
-                        including sensor noise, and changes in object dynamics. Evaluations in multiple challenging,
-                        contact-rich robot manipulation tasks in simulation and the real world showcase the
-                        effectiveness of MSDP. Our approach exhibits strong robustness to perturbations and achieves
-                        high success rates on the real robot with as few as 6,000 online interactions, offering a simple
-                        yet powerful solution for complex multisensory robotic control.
+        <div class="columns is-centered is-vcentered">
+            <!-- Left: Title + Text -->
+            <div class="column is-half has-text-centered">
+                <h2 class="title is-3" style="font-size: 2.5rem;">TL;DR</h2>
+                <div class="content has-text-centered">
+                    <p class="content" style="font-size: 1.4rem;">
+                        <b>Multisensory pretraining enhances RL for contact-rich tasks by <br>
+                            learning expressive representations <br> through masked autoencoding.</b>
                     </p>
                 </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="column is-half">
+                <figure class="image">
+                    <img src="./static/images/MSDP_teaser.png" alt="MSDP Teaser"
+                         style="border-radius: 8px; object-fit: contain; max-height: 300px; width: 100%;">
+                </figure>
             </div>
         </div>
     </div>
 </section>
+
+<!-- TL;DR no image -->
+<!--<section class="section">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="columns is-centered">-->
+<!--            <div class="column has-text-centered">-->
+<!--                <h2 class="title is-3" style="font-size: 3.0rem;">TL;DR</h2>-->
+<!--                <div class="content has-text-centered">-->
+<!--                    <p class="content" style="font-size: 1.5rem;">-->
+<!--                        <b>Multisensory pretraining enhances RL for contact-rich tasks by-->
+<!--                        learning expressive representations through masked autoencoding.</b>-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</section>
+
+<!-- Thin purple subtle line -->
+<div class="container is-max-desktop">
+    <hr style="background-color: rgb(117, 84, 175); height: 1px; border: none;">
+</div>
+
+<!--&lt;!&ndash; Abstract &ndash;&gt;-->
+<!--<section class="section" id="abstract"  style="padding-top: 0.0rem;">-->
+<!--    <div class="container is-max-desktop">-->
+<!--        <div class="columns is-centered has-text-centered">-->
+<!--            <div class="column is-four-fifths">-->
+<!--                <h2 class="title is-3">Abstract</h2>-->
+<!--                <div class="content has-text-justified">-->
+<!--                    <p>-->
+<!--                        Effective contact-rich manipulation requires robots to synergistically leverage vision, force,-->
+<!--                        and proprioception. However, Reinforcement Learning agents struggle to learn in such-->
+<!--                        multisensory settings, especially amidst sensory noise and dynamic changes.-->
+<!--                        We propose MultiSensory Dynamic Pretraining (MSDP), a novel framework for learning expressive-->
+<!--                        multisensory representations tailored for task-oriented policy learning. MSDP is based on masked-->
+<!--                        autoencoding and trains a transformer-based encoder by reconstructing multisensory observations-->
+<!--                        from only a subset of sensor embeddings, leading to cross-modal prediction and sensor fusion.-->
+<!--                        For downstream policy learning, we introduce a novel asymmetric architecture, where a-->
+<!--                        cross-attention mechanism allows the critic to extract dynamic, task-specific features from the-->
+<!--                        frozen embeddings, while the actor receives a stable pooled representation to guide its actions.-->
+<!--                        Our method demonstrates accelerated learning and robust performance under diverse perturbations,-->
+<!--                        including sensor noise, and changes in object dynamics. Evaluations in multiple challenging,-->
+<!--                        contact-rich robot manipulation tasks in simulation and the real world showcase the-->
+<!--                        effectiveness of MSDP. Our approach exhibits strong robustness to perturbations and achieves-->
+<!--                        high success rates on the real robot with as few as 6,000 online interactions, offering a simple-->
+<!--                        yet powerful solution for complex multisensory robotic control.-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <!-- Video -->
@@ -438,6 +518,10 @@
     </div>
 </section>
 
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
+
 <!-- MSDP Framework -->
 <section class="section">
     <div class="container is-max-desktop">
@@ -449,21 +533,25 @@
                 </figure>
                 <div class="content has-text-justified">
                     <p class="content" style="margin-top: 1.5rem;">
-                        The MSDP framework with MSDP-Encoder (left), Pretraining (top right) and downstream RL (bottom
+                        The <span class="purple"><b>MSDP framework</b></span> with MSDP-Encoder (left), Pretraining (top
+                        right) and downstream RL (bottom
                         right): The current multisensory observation gets projected with a CNN-stem and linear layers to
                         the
-                        embedding space. The MSDP-encoder fuses all sensor embeddings to form our expressive
+                        embedding space. The MSDP-encoder fuses all sensor embeddings to form our <b>expressive
                         multisensory
-                        latent representation. The encoder is trained via the decoder and (next) sensor observation
+                        latent representation</b>. The encoder is trained via the decoder and (next) sensor observation
                         reconstruction from a subset of sensor embeddings (Masked Autoencoding). This pretraining
-                        results in dynamic cross-sensor
-                        prediction, shaping and fusing sensor representations. For downstream RL we extract multisensory
-                        task-specific features via a single cross-attention layer for the critic and via pooling for the
+                        results in <b>dynamic cross-sensor
+                        prediction</b>, shaping and fusing sensor representations. For downstream RL we <b>extract
+                        multisensory
+                        task-specific features</b> via a single cross-attention layer for the critic and via pooling for
+                        the
                         actor. Sensor embeddings are only masked during pretraining. Our Framework offers an expressive
                         and
-                        robust multisensory representation for complex contact-rich manipulation tasks in simulation and
+                        <b>robust multisensory representation</b> for <b>complex contact-rich manipulation</b> tasks in
+                        simulation and
                         the
-                        real world.
+                        <b>real world</b>.
                     </p>
                 </div>
             </div>
@@ -472,30 +560,9 @@
 </section>
 
 
-<!-- Simulation Experiments-->
-<section class="section">
-    <div class="container is-max-desktop">
-        <div class="columns is-centered">
-            <div class="column has-text-centered">
-                <h2 class="title is-3">Simulation Experiments</h2>
-        <div style="line-height: 0; overflow: hidden; border: none; box-shadow: none;">
-          <video autoplay muted loop playsinline preload="metadata"
-                 style="width: 100%; display: block; border: none; vertical-align: bottom; margin-bottom: -1px;">
-            <source src="./static/videos/msdp_sim.mp4" type="video/mp4">
-          </video>
-        </div>
-
-                <figure class="image">
-                    <img src="./static/images/msdp_sim_results.svg" alt="Simulation Results">
-                </figure>
-<!--                <p class="content" style="margin-top: 1.5rem;">-->
-<!--                    Explanation text goes here.-->
-<!--                </p>-->
-            </div>
-        </div>
-    </div>
-</section>
-
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
 
 <!-- Real World -->
 <section class="section">
@@ -545,16 +612,19 @@
                 <div class="content has-text-justified">
                     <!-- Overall caption -->
                     <p class="content" style="margin-top: 1rem;">
-                        Real world setup and experimental results. Our MSDP framework enables training RL policies
-                        directly
-                        in the real world, with first successful episodes after only 2,000 / 1,000 online interactions,
-                        outperforming various baselines. Task success is detected via endeffector position or the aruco
+                        Real world setup and experimental results. <span class="purple"><b>MSDP</b></span> enables
+                        training RL policies
+                        <b>directly in the real world</b>, with first successful episodes after only 2,000 / 1,000
+                        online interactions,
+                        <b>outperforming various baselines</b>. Task success is detected via endeffector position or the
+                        aruco
                         marker on the cube. Force torque readings are essential to consistently push the cube to the
                         goal
-                        or to insert the peg under occlusion improving task success by 14% (cf. MSDP-noFT). Policies are
+                        or to insert the peg under occlusion <b>improving task success by 14%</b> (cf. MSDP-noFT).
+                        Policies are
                         learned directly on the pretrained multisensory representation, without any sim-to-real
                         transfer,
-                        with only 6,000 online interactions.
+                        with <b>only 6,000 online interactions</b>.
                     </p>
                 </div>
                 <div class="columns is-centered is-vcentered" style="margin-top: 1.5rem;">
@@ -563,56 +633,93 @@
                         <div class="content">
                             <h3 class="title is-5 has-text-centered">Robustness Evaluation</h3>
                             <p class="has-text-justified">
-                                We evaluate the final policy of MSDP-P in the Peg Insertion task under various
-                                disturbances to showcase the robustness of our pretrained multisensory encoder and
-                                policy. We evaluate each change that hasn't been observed during training for 20 trials.
+                                We evaluate the final policy of MSDP-P in the Peg Insertion task <b>under various
+                                disturbances</b> to showcase the <b>robustness</b> of our <b>pretrained multisensory
+                                encoder</b> and
+                                <b>policy</b>. We evaluate each change that hasn't been observed during training for 20
+                                trials.
                                 Trained on \(K_c\)=2000 cartesian-stiffness the policy achieves 90 % success rate with
-                                decreased (\(K_C\)=1500) and 100 % with increased cartesian-stiffness (\(K_c\)=2500). MSDP
+                                decreased (\(K_C\)=1500) and 100 % with increased cartesian-stiffness (\(K_c\)=2500).
+                                MSDP
                                 shows remarkable robustness against changed light settings, e.g., back light (100 %),
                                 front light (100 %), disco lights (100 %) and visual occlusion (partly blocked camera
-                                view, 95 %) and external forces (80 %).
+                                view, 95 %) and external forces.
                             </p>
                         </div>
                     </div>
                     <!-- Right: 2x2 grid -->
-                <div class="column">
-                    <div class="columns is-mobile" style="margin-bottom: 0; margin-left: 0; margin-right: 0;">
-                        <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
-                            <figure class="image" style="max-width: 70%; margin: 0 auto;">
-                                <img src="./static/gifs/msdp_back_light.gif" alt="MSDP Back Light">
-                            </figure>
+                    <div class="column">
+                        <div class="columns is-mobile" style="margin-bottom: 0; margin-left: 0; margin-right: 0;">
+                            <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
+                                <figure class="image" style="max-width: 70%; margin: 0 auto;">
+                                    <img src="./static/gifs/msdp_back_light.gif" alt="MSDP Back Light">
+                                </figure>
+                            </div>
+                            <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
+                                <figure class="image" style="max-width: 70%; margin: 0 auto;">
+                                    <img src="./static/gifs/msdp_front_light.gif" alt="MSDP Front Light">
+                                </figure>
+                            </div>
                         </div>
-                        <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
-                            <figure class="image" style="max-width: 70%; margin: 0 auto;">
-                                <img src="./static/gifs/msdp_front_light.gif" alt="MSDP Front Light">
-                            </figure>
+                        <div class="columns is-mobile" style="margin-left: 0; margin-right: 0;">
+                            <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
+                                <figure class="image" style="max-width: 70%; margin: 0 auto;">
+                                    <img src="./static/gifs/msdp_vision_occlusion.gif" alt="MSDP Vision Occlusion">
+                                </figure>
+                            </div>
+                            <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
+                                <figure class="image" style="max-width: 70%; margin: 0 auto;">
+                                    <img src="./static/gifs/disco.gif" alt="Disco">
+                                </figure>
+                            </div>
                         </div>
                     </div>
-                    <div class="columns is-mobile" style="margin-left: 0; margin-right: 0;">
-                        <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
-                            <figure class="image" style="max-width: 70%; margin: 0 auto;">
-                                <img src="./static/gifs/msdp_vision_occlusion.gif" alt="MSDP Vision Occlusion">
-                            </figure>
-                        </div>
-                        <div class="column" style="padding-left: 0.25rem; padding-right: 0.25rem;">
-                            <figure class="image" style="max-width: 70%; margin: 0 auto;">
-                                <img src="./static/gifs/disco.gif" alt="Disco">
-                            </figure>
-                        </div>
-                    </div>
+
+                    <!--                </div> &lt;!&ndash; end columns is-centered is-vcentered &ndash;&gt;-->
+                    <!--            </div> &lt;!&ndash; end column has-text-centered &ndash;&gt;-->
+                </div> <!-- end columns is-centered -->
+            </div> <!-- end container -->
+</section>
+
+
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
+
+<!-- Simulation Experiments-->
+<section class="section">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered">
+            <div class="column has-text-centered">
+                <h2 class="title is-3">Simulation Experiments</h2>
+                <div style="line-height: 0; overflow: hidden; border: none; box-shadow: none;">
+                    <video autoplay muted loop playsinline preload="metadata"
+                           style="width: 100%; display: block; border: none; vertical-align: bottom; margin-bottom: -1px;">
+                        <source src="./static/videos/msdp_sim.mp4" type="video/mp4">
+                    </video>
                 </div>
 
-<!--                </div> &lt;!&ndash; end columns is-centered is-vcentered &ndash;&gt;-->
-<!--            </div> &lt;!&ndash; end column has-text-centered &ndash;&gt;-->
-        </div> <!-- end columns is-centered -->
-    </div> <!-- end container -->
+                <figure class="image">
+                    <img src="./static/images/msdp_sim_results.svg" alt="Simulation Results">
+                </figure>
+                <!--                <p class="content" style="margin-top: 1.5rem;">-->
+                <!--                    Explanation text goes here.-->
+                <!--                </p>-->
+            </div>
+        </div>
+    </div>
 </section>
+
+
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
 
 <!-- BibTeX -->
 <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
         <h2 class="title has-text-centered">BibTeX</h2>
-        <pre><code>@misc{msdp_krohn2025,
+        <pre style="text-align: left; display: inline-block;"><code>@misc{msdp_krohn2025,
   title= {Self-Supervised Multisensory Pretraining for Contact-Rich Robot Reinforcement Learning},
   author = {Rickmer Krohn and Vignesh Prasad and Gabriele Tiboni and Georgia Chalvatzaki},
   year = {2025},
@@ -624,6 +731,9 @@
     </div>
 </section>
 
+<div class="container is-max-desktop">
+    <hr style="background-color: #ddd; height: 1px; border: none;">
+</div>
 
 <!-- Acknowledgments -->
 <section class="section" id="acknowledgments">
@@ -634,8 +744,13 @@
                 <div class="content has-text-justified">
                     <p>
                         This research is funded by the German Research Foundation (DFG) Emmy Noether Programme (CH
-                        2676/1-1), the EU’s Horizon Europe project ARISE (Grant no.: 101135959) and the German
-                        Federal Ministry of Education and Research (BMBF) project “RiG” (Grant no.: 16ME1001).
+                        2676/1-1), the EU’s Horizon Europe project ARISE (Grant no.: 101135959), the German
+                        Federal Ministry of Education and Research (BMBF) project “RiG” (Grant no.: 16ME1001) and the
+                        European Research Council (ERC) project “SIREN” (Grant No.: 101163933). The authors gratefully
+                        acknowledge the computing time provided to
+                        them on the high-performance computer Lichtenberg II at TU Darmstadt,
+                        funded by the German Federal Ministry of Education and Research (BMBF)
+                        and the State of Hesse.
                     </p>
                 </div>
             </div>
@@ -665,19 +780,28 @@
                 <!-- Row 2 -->
                 <div class="columns is-centered is-vcentered is-mobile" style="flex-wrap: wrap; gap: 1rem;">
                     <div class="column is-narrow">
-                        <img src="./static/logos/emmynoether_logo.jpeg" alt="Emmy Noether"
-                             style="max-height: 60px; object-fit: contain;">
-                    </div>
-                    <div class="column is-narrow">
                         <img src="./static/logos/hessianai_logo.png" alt="Hessian AI"
-                             style="max-height: 60px; object-fit: contain;">
+                             style="max-height: 50px; object-fit: contain;">
                     </div>
                     <div class="column is-narrow">
-                        <img src="./static/logos/rig_logo.png" alt="RIG" style="max-height: 60px; object-fit: contain;">
+                        <img src="./static/logos/emmynoether_logo.jpeg" alt="Emmy Noether"
+                             style="max-height: 50px; object-fit: contain;">
                     </div>
-                    <div class="column is-narrow">
-                        <img src="./static/logos/arise_logo.png" alt="Arise"
-                             style="max-height: 60px; object-fit: contain;">
+
+                    <!-- Row 3 -->
+                    <div class="columns is-centered is-vcentered is-mobile" style="flex-wrap: wrap; gap: 1rem;">
+                        <div class="column is-narrow">
+                            <img src="./static/logos/rig_logo.png" alt="RIG"
+                                 style="max-height: 50px; object-fit: contain;">
+                        </div>
+                        <div class="column is-narrow">
+                            <img src="./static/logos/arise_logo.png" alt="Arise"
+                                 style="max-height: 50px; object-fit: contain;">
+                        </div>
+                        <div class="column is-narrow">
+                            <img src="./static/logos/erc_logo.png" alt="ERC"
+                                 style="max-height: 80px; object-fit: contain;">
+                        </div>
                     </div>
                 </div>
             </div>
