@@ -23,9 +23,6 @@
     <link rel="manifest" href="static/icons/site.webmanifest"> <!-- PWA optional -->
 
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
     <style>
         body {
             font-family: 'Noto Sans', Arial, sans-serif;
@@ -49,7 +46,15 @@
 
         /*<!-- Or a reusable class in your CSS -->*/
         .purple {
-            color: rgb(117, 84, 175);
+            background: linear-gradient(90deg, rgb(168, 68, 158), rgb(117, 84, 175) 30%, rgb(117, 84, 175) 70%, rgb(82, 92, 205));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .purple b {
+            -webkit-text-fill-color: transparent;
         }
 
         .hero .title {
